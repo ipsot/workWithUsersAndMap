@@ -23,7 +23,12 @@ public class MapServices implements UserCardService {
         this.userRepository = userRepository;
     }
 
-    public Map createNewCard(Map map) {
+    public Map createNewCard(Map map,Long id) {
+
+        Map finalMap = map;
+        map=userRepository.findById(id).map(card->{card.getMaps().add(finalMap);
+        return userCardRepository.saveAndFlush(finalMap);}).orElse(null);
+
         return userCardRepository.saveAndFlush(map);
     }
 

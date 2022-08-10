@@ -1,6 +1,7 @@
 package com.example.workwithusersandmap.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -59,5 +60,5 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
-    private List<Map> maps;
+    private List<Map> maps=new ArrayList<>();
 }

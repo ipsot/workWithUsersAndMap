@@ -23,14 +23,17 @@ public class Map {
     private boolean isBlock;
 
 
-    public Map(String number, LocalDateTime expirationDate, boolean isBlock) {
+    public Map(){}
+
+    public Map(String number, LocalDateTime expirationDate, boolean isBlock) { //(Been User user)
 
         this.number = number;
         this.expirationDate = expirationDate;
         this.isBlock = isBlock;
+//        this.user=user;
     }
 
-    public Map() {
+    public Map(Long id, String number, LocalDateTime expirationDate, boolean block) { //Been User user
     }
 
     public Long getId() {
@@ -65,6 +68,14 @@ public class Map {
         isBlock = block;
     }
 
-    @ManyToOne(cascade = CascadeType.REFRESH,fetch = FetchType.EAGER)
-    private User user;
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
+
+//    @ManyToOne(cascade = CascadeType.REFRESH,fetch = FetchType.EAGER)
+//    private User user;
 }
