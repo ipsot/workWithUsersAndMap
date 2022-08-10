@@ -11,6 +11,6 @@ import java.util.Optional;
 
 @Repository
 public interface UserCardRepository extends JpaRepository<Map,Long> {
-    @Query(value = "Select users.full_name, cards.number, cards.user_id from cards join users on users.id=cards.user_id where user_id=?1",nativeQuery = true)
-    Optional<Map> getAllCardUser(Long id);
+    @Query(value = "Select cards.number from cards join users on users.id=cards.user_id where user_id=?1",nativeQuery = true)
+    ArrayList<String> getAllCardUser(Long id);
 }

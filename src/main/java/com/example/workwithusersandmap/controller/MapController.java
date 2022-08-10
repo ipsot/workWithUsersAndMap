@@ -30,7 +30,13 @@ public class MapController{
     }
 
     @GetMapping("/seeUserCard/{id}")
-    public Optional<Map> getUserCards(@PathVariable Long id){
+    public ArrayList<String> getUserCards(@PathVariable Long id){
         return mapServices.getAllCardUser(id);
+    }
+
+
+    @PutMapping("/blockCard/{id}")
+    public Map blockCard(@PathVariable Long id){
+        return mapServices.blockingCard(id);
     }
 }

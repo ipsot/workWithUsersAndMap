@@ -7,6 +7,7 @@ import com.example.workwithusersandmap.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -41,7 +42,7 @@ public class MapServices implements UserCardService {
     }
 
     @Override
-    public Optional<Map> getAllCardUser(Long id){
+    public ArrayList<String> getAllCardUser(Long id){
         var result=userCardRepository.getAllCardUser(id);
         return result;
     }
